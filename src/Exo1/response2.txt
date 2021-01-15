@@ -1,0 +1,21 @@
+3+4 receveur 3, selecteur +, argument 4 , "7"
+
+Date today : receveur Date , selecteur today . pas d'argument. "10 January 2021"
+
+anArray at: 1 put : 'hello' receveur anArray, selecteur at:put , argument 1 : hello .normalement au lieu du premier element du tableau on aure hello.
+
+anArray at: i receveur anArray , selecteur at: , argument i . "on aura le ieme element"
+
+#(2 33 -4 67) collect: [ :each | each abs]  receveur le tableau (#(2 33 -4 67)), selecteur collect argument le block [:each | each abs] , "on obtient le meme tableau avec la valeur absolue de ces entiers".
+
+25 @ 50 , receveur 25, selecteur @ , argument 50, on obtient "le point de coordonnes (25,50)".
+
+SmallInteger maxVal , receveur SmallInteger ,selecteur maxVal , "on obtient le nombre "1152921504606846975"
+
+#(a b c d e f) includesAll: #(f d b) , receveur #(a b c d e f) ,selector "includesAll"  argument #(f d b)  "on obtient un boolean pour savoir si tous les elements du 2eme tableau appartient au premier ou non" , "true".
+
+true | false . receveur true , selector | , argument false , "true"
+
+Point selectors , receveur Point , selecteur selectors , on obtient tous les methodes de la classe Point..
+
+

@@ -1,0 +1,10 @@
+Transferator
+
+
+Comme elle commence par une lettre majuscule , donc soit une class ou une variable globale ou une variable de classe.
+
+
+
+rectangle
+
+Comme elle commence par une lettre minuscule donc c'est une variable locale comme un argument ou instance d'une variable  ou un selecteur

@@ -1,0 +1,19 @@
+Exercice 1
+----------
+
+'Hello, Dave' : une chaine de caractere
+
+1.3   un flotant
+
+#node1 un symbole
+
+#(2 33 4) un tableau de 3 elements
+
+[ :each | each scale: 1.5] un bloack d'instruction
+
+$A un caractere
+
+true boolean true
+
+1 small entier
+
