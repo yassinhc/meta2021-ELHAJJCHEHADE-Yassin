@@ -1,0 +1,9 @@
+	| cloud |
+	cloud := #(1 2 3 -44 0 5 6 4 5 -3 22 1 2 5).
+	cloud collect: [ :each | each abs].
+	
+	cloud collect: [ :each | each **2 ].
+	
+	cloud inject: 0 into: [ :each1 :each2 | each1 + each2 ].
+	
+	cloud detect: [ :each | each negative ].
