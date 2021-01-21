@@ -42,3 +42,12 @@ Die >> roll [
 
 	^ faces atRandom.
 ]
+
+{ #category : #accessing }
+Die >> withFaces: anInteger [ 
+
+	| d |
+	d := Die new.
+	d faces: anInteger.
+	^ d
+]
