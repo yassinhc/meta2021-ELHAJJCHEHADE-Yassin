@@ -8,8 +8,26 @@ Class {
 }
 
 { #category : #accessing }
+Die class >> faces [
+	self shouldBeImplemented.
+]
+
+{ #category : #instanceCreation }
+Die class >> withFaces: anInteger [ 
+	| d |
+	d := Die new.
+	d faces: anInteger.
+	^ d
+]
+
+{ #category : #accessing }
 Die >> faces [
 	^ faces
+]
+
+{ #category : #accessing }
+Die >> faces: anInteger [
+	faces := anInteger 
 ]
 
 { #category : #initialization }
