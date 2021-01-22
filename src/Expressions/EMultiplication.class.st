@@ -18,6 +18,11 @@ EMultiplication >> left: anExpression [
 	left:= anExpression 
 ]
 
+{ #category : #'as yet unclassified' }
+EMultiplication >> negated [
+	^ ENegation new expression: self 
+]
+
 { #category : #accessing }
 EMultiplication >> right: anExpression [ 
 	right:= anExpression 

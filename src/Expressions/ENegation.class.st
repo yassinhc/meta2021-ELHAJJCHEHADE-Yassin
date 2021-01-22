@@ -19,3 +19,8 @@ ENegation >> evaluate [
 ENegation >> expression: anExpression [
 	expression := anExpression 
 ]
+
+{ #category : #'as yet unclassified' }
+ENegation >> negated [
+	^ self class new expression: self
+]

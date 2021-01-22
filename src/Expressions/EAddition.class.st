@@ -18,6 +18,11 @@ EAddition >> left:  anInteger [
 	left := anInteger 
 ]
 
+{ #category : #'as yet unclassified' }
+EAddition >> negated [
+	^ ENegation new expression: self
+]
+
 { #category : #accessing }
 EAddition >> right: anInteger [
 	right := anInteger 
