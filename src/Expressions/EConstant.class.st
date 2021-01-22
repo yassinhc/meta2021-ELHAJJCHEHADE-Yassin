@@ -1,6 +1,6 @@
 Class {
 	#name : #EConstant,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'value'
 	],
@@ -10,11 +10,6 @@ Class {
 { #category : #accessing }
 EConstant >> evaluate [
 	^ value 
-]
-
-{ #category : #'as yet unclassified' }
-EConstant >> negated [
-	^ ENegation new expression: self
 ]
 
 { #category : #accessing }

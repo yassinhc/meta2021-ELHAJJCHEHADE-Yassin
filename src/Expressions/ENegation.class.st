@@ -1,6 +1,6 @@
 Class {
 	#name : #ENegation,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'expression'
 	],
