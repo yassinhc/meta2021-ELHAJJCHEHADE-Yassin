@@ -20,6 +20,33 @@ Die class >> withFaces: anInteger [
 	^ d
 ]
 
+{ #category : #'as yet unclassified' }
+Die >> + aDie [ 
+	^ aDie addingDie: self
+		
+]
+
+{ #category : #'as yet unclassified' }
+Die >> addingDie: aDie [
+		
+	| hand |
+	hand :=  DieHandle new 
+		addDie: aDie;
+		addDie: self;
+		yourself .
+		
+	^ hand
+ 	
+	
+]
+
+{ #category : #'as yet unclassified' }
+Die >> addingHandle: aHandle [ 
+	^ aHandle addDie: self
+ 	
+	
+]
+
 { #category : #accessing }
 Die >> faces [
 	^ faces

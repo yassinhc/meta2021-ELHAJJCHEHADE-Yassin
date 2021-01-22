@@ -10,16 +10,30 @@ Class {
 { #category : #initialization }
 DieHandle >> + aDieHandle [
 
-	| handle |
-	handle := aDieHandle.
-	self dice do: [ :each | handle addDie: each  ].
-	^ handle.
+	^ aDieHandle addingHandle: self
 ]
 
 { #category : #initialization }
 DieHandle >> addDie: aDie [
 
 	dice add: aDie.
+]
+
+{ #category : #initialization }
+DieHandle >> addingDie: aDie [
+
+	self addDie: aDie.
+	^ self
+	
+]
+
+{ #category : #initialization }
+DieHandle >> addingHandle: aDieHandle [
+
+	| handle |
+	handle := aDieHandle.
+	self dice do: [ :each | handle addDie: each  ].
+	^ handle.
 ]
 
 { #category : #initialization }
