@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #accessing }
+EConstant class >> value: anInteger [ 		
+	^ self new value: anInteger 
+]
+
+{ #category : #accessing }
 EConstant >> evaluate [
 	^ value 
 ]

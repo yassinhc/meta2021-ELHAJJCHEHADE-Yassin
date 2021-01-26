@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #tests }
+EConstantTest >> testCreationWithClassCreationMessage [ 
+	self assert: (EConstant value: 5) evaluate equals: 5
+]
+
+{ #category : #tests }
 EConstantTest >> testEvaluate [ 
 	self assert: (EConstant new value: 5) evaluate equals: 5
 ]

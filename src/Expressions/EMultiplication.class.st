@@ -8,6 +8,11 @@ Class {
 	#category : #Expressions
 }
 
+{ #category : #'instance creation' }
+EMultiplication class >> left: anExp1 right: anExp2 [
+	^ self new left: anExp1 ; right: anExp2  
+]
+
 { #category : #accessing }
 EMultiplication >> evaluate [ 
 	^ left evaluate  * right evaluate 

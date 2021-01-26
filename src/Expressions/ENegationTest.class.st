@@ -10,6 +10,11 @@ ENegationTest >> testEvaluate [
 ]
 
 { #category : #tests }
+ENegationTest >> testEvaluateWithClassCreationMessage [
+	self assert: (ENegation expression: (EConstant new value: 5)) evaluate equals: -5
+]
+
+{ #category : #tests }
 ENegationTest >> testNegationNegated [
 	self assert: (EConstant new value: 5) negated negated evaluate equals: 5
 ]
