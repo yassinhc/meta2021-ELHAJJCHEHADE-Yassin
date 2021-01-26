@@ -17,3 +17,8 @@ EAddition class >> fivePlusThree [
 EAddition >> evaluate [ 
 	^ left evaluate  + right evaluate 
 ]
+
+{ #category : #accessing }
+EAddition >> operatorString [ 
+	^ ' + '
+]

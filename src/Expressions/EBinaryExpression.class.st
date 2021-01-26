@@ -14,13 +14,18 @@ EBinaryExpression class >> left: anInteger1  right: anInteger2 [
 ]
 
 { #category : #accessing }
+EBinaryExpression >> evaluate [ 
+	^ self subclassResponsibility 
+]
+
+{ #category : #accessing }
 EBinaryExpression >> left: anExpression [ 
 	left:= anExpression 
 ]
 
 { #category : #accessing }
 EBinaryExpression >> operatorString [
-	^ ' + '
+	^ self subclassResponsibility 
 ]
 
 { #category : #accessing }
