@@ -19,6 +19,20 @@ EBinaryExpression >> left: anExpression [
 ]
 
 { #category : #accessing }
+EBinaryExpression >> operatorString [
+	^ ' + '
+]
+
+{ #category : #accessing }
+EBinaryExpression >> printOn: aStream [ 
+	aStream nextPutAll: '( '.
+	left printOn: aStream.
+	aStream nextPutAll: self operatorString.
+	right printOn: aStream.
+	aStream nextPutAll: ' )'.
+]
+
+{ #category : #accessing }
 EBinaryExpression >> right: anExpression [ 
 	right:= anExpression 
 ]

@@ -17,8 +17,3 @@ EAddition class >> fivePlusThree [
 EAddition >> evaluate [ 
 	^ left evaluate  + right evaluate 
 ]
-
-{ #category : #accessing }
-EAddition >> printOn: aStream [ 
-	aStream nextPutAll: '( ',left printString ,' + ',right printString ,' )'.
-]
