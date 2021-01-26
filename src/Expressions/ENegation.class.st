@@ -13,11 +13,10 @@ ENegation class >> expression: anExpression [
 ]
 
 { #category : #'public access' }
-ENegation >> evaluate [ 
+ENegation >> evaluateWith: anObject [
 	| d |
-	d  := expression evaluate  negated.
+	d := (expression evaluateWith: anObject) negated.
 	^ d
-	
 ]
 
 { #category : #accessing }

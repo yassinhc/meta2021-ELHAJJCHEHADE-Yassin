@@ -14,7 +14,7 @@ EBinaryExpression class >> left: anInteger1  right: anInteger2 [
 ]
 
 { #category : #accessing }
-EBinaryExpression >> evaluate [ 
+EBinaryExpression >> evaluateWith: anObject [ 
 	^ self subclassResponsibility 
 ]
 
