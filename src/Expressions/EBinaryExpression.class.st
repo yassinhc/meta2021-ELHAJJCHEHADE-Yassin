@@ -1,0 +1,24 @@
+Class {
+	#name : #EBinaryExpression,
+	#superclass : #EExpression,
+	#instVars : [
+		'left',
+		'right'
+	],
+	#category : #Expressions
+}
+
+{ #category : #'instance creation' }
+EBinaryExpression class >> left: anInteger1  right: anInteger2 [ 
+	^ self new left: anInteger1 ; right: anInteger2  
+]
+
+{ #category : #accessing }
+EBinaryExpression >> left: anExpression [ 
+	left:= anExpression 
+]
+
+{ #category : #accessing }
+EBinaryExpression >> right: anExpression [ 
+	right:= anExpression 
+]

@@ -19,3 +19,8 @@ EMultiplicationTest >> testEvaluateWithClassCreationMessage [
 	ep2 := (EConstant value: 3).
 	self assert: (EMultiplication left: ep1 right: ep2) negated evaluate equals: -15
 ]
+
+{ #category : #tests }
+EMultiplicationTest >> testPrinting [ 	
+	self assert: (EMultiplication fiveTimesThree) negated printString equals: '- ( 5 * 3 )'
+]

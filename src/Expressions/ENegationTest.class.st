@@ -15,6 +15,15 @@ ENegationTest >> testEvaluateWithClassCreationMessage [
 ]
 
 { #category : #tests }
+ENegationTest >> testNegatedStructureIsCorrect [
+	| exp |
+	exp := EConstant value: 11.
+	self assert: exp negated class = ENegation.
+	self assert: exp negated negated equals: exp.
+	
+]
+
+{ #category : #tests }
 ENegationTest >> testNegationNegated [
 	self assert: (EConstant new value: 5) negated negated evaluate equals: 5
 ]

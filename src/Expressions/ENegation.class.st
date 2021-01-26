@@ -27,5 +27,11 @@ ENegation >> expression: anExpression [
 
 { #category : #'as yet unclassified' }
 ENegation >> negated [
-	^ self class new expression: self
+	^ expression 
+]
+
+{ #category : #'as yet unclassified' }
+ENegation >> printOn: aStream [ 
+	aStream nextPutAll: '- '.
+	expression printOn: aStream 
 ]
