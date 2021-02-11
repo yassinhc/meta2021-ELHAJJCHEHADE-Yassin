@@ -1,12 +1,21 @@
 Class {
 	#name : #CHInterpreter,
 	#superclass : #Object,
+	#instVars : [
+		'receiver'
+	],
 	#category : #'Champollion-Tests'
 }
 
 { #category : #execute }
-CHInterpreter >> execute: anAST [ 
+CHInterpreter >> execute: anAST withReceiver: anObject [ 
+	receiver := anObject .
 	^ self visitNode: anAST 
+]
+
+{ #category : #execute }
+CHInterpreter >> receiver [ 	
+	^ receiver 
 ]
 
 { #category : #visiting }

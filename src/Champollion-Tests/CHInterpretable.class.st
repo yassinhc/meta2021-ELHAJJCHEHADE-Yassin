@@ -28,3 +28,13 @@ CHInterpretable >> returnInteger [
 CHInterpretable >> returnRecursiveLiteralArray [
 	^ #(true 1 #('ahah'))
 ]
+
+{ #category : #'as yet unclassified' }
+CHInterpretable >> returnSelf [
+	^ self
+]
+
+{ #category : #'as yet unclassified' }
+CHInterpretable >> visitSelfNode: aNode [
+	^ self receiver
+]

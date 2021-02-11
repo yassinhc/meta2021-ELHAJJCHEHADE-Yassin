@@ -6,9 +6,15 @@ Class {
 
 { #category : #tests }
 CHInterpreterTest >> executeSelector: aSymbol [ 
+	^ self execute: aSymbol withReceiver: nil.
+	
+]
+
+{ #category : #tests }
+CHInterpreterTest >> executeSelector: aSymbol withReceiver: aReceiver [ 
 	| ast |
 	ast := (CHInterpretable >> aSymbol) parseTree .
-	^ self interpreter execute: ast.
+	^ self interpreter execute: ast withReceiver: aReceiver 
 	
 ]
 
@@ -45,4 +51,11 @@ CHInterpreterTest >> testReturnInteger [
 CHInterpreterTest >> testReturnRecursiveLiteralArray [
 	
 	self assert: (self executeSelector: #returnRecursiveLiteralArray ) equals: #(true 1 #('ahah'))
+]
+
+{ #category : #tests }
+CHInterpreterTest >> testReturnSelf [
+	| receiver |
+	receiver := Object new.
+	self assert: (self executeSelector: #returnSelf withReceiver: receiver ) == receiver 
 ]
