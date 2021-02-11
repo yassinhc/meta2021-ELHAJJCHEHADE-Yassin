@@ -23,3 +23,13 @@ CountingInterpreterTest >> testMessageCount2 [
 	ast acceptVisitor: counting.
 	self assert: counting numberOfMessages equals: 4.
 ]
+
+{ #category : #tests }
+CountingInterpreterTest >> testMethodUsingSelf [
+	
+	| ast counting |
+	ast := RBParser parseMethod: (Point >> #sideOf: ) sourceCode.
+	counting := CountingManualInterpreterOfSelf new.
+	ast acceptVisitor: counting.
+	self assert: counting numberOfSelf equals: 1.
+]
