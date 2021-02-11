@@ -9,6 +9,12 @@ CHInterpreter >> execute: anAST [
 	^ self visitNode: anAST 
 ]
 
+{ #category : #visiting }
+CHInterpreter >> visitLiteralArrayNode: aLiteralArrayNode [ 
+	^ aLiteralArrayNode contents 
+		collect: [ :literalNode | self visitNode: literalNode  ] as:Array
+]
+
 { #category : #'as yet unclassified' }
 CHInterpreter >> visitLiteralValueNode: aLiteralValueNode [ 
 	^ aLiteralValueNode value
