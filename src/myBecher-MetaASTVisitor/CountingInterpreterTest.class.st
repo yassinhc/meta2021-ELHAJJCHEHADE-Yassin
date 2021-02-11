@@ -25,6 +25,16 @@ CountingInterpreterTest >> testMessageCount2 [
 ]
 
 { #category : #tests }
+CountingInterpreterTest >> testMethodAttribuatValue [
+	
+	| ast counting |
+	ast := RBParser parseMethod: (Point >> #sideOf: ) sourceCode.
+	counting := CountingManualInterpreterOfAttribuate new.
+	ast acceptVisitor: counting.
+	self assert: counting IsAttribuate equals: 1.
+]
+
+{ #category : #tests }
 CountingInterpreterTest >> testMethodUsingSelf [
 	
 	| ast counting |
