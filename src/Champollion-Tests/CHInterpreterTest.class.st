@@ -1,12 +1,16 @@
 Class {
 	#name : #CHInterpreterTest,
 	#superclass : #TestCase,
+	#instVars : [
+		'interpreter',
+		'receiver'
+	],
 	#category : #'Champollion-Tests'
 }
 
 { #category : #tests }
 CHInterpreterTest >> executeSelector: aSymbol [ 
-	^ self executeSelector: aSymbol withReceiver: nil.
+	^ self executeSelector: aSymbol withReceiver: receiver.
 	
 ]
 
@@ -21,6 +25,17 @@ CHInterpreterTest >> executeSelector: aSymbol withReceiver: aReceiver [
 { #category : #interprete }
 CHInterpreterTest >> interpreter [
 	^ CHInterpreter new
+]
+
+{ #category : #interprete }
+CHInterpreterTest >> setUp [ 	
+	super setUp.
+	receiver := CHInterpretable new
+]
+
+{ #category : #tests }
+CHInterpreterTest >> testAssignmentReturnsAssignedValue [
+	self assert: (self executeSelector: #store100IntoX) equals: 100
 ]
 
 { #category : #tests }
@@ -42,6 +57,21 @@ CHInterpreterTest >> testReturnFloat [
 ]
 
 { #category : #tests }
+CHInterpreterTest >> testReturnGlobal [
+	| globalObject |
+	globalObject := Object new.
+	interpreter globalEnvironmentAt: #Global put: globalObject.
+	self assert: (self executeSelector: #returnGlobal) equals: globalObject  
+]
+
+{ #category : #tests }
+CHInterpreterTest >> testReturnInstanceVariableRead [
+
+	receiver x: 100.
+	self assert: (self executeSelector: #returnX withReceiver: receiver ) equals: 100 
+]
+
+{ #category : #tests }
 CHInterpreterTest >> testReturnInteger [
 	
 	self assert: (self executeSelector: #returnInteger) equals: 5
@@ -55,14 +85,18 @@ CHInterpreterTest >> testReturnRecursiveLiteralArray [
 
 { #category : #tests }
 CHInterpreterTest >> testReturnSelf [
-	| receiver |
-	receiver := Object new.
+
 	self assert: (self executeSelector: #returnSelf withReceiver: receiver ) == receiver 
 ]
 
 { #category : #tests }
 CHInterpreterTest >> testReturnSuper [
-	| receiver |
-	receiver := Object new.
 	self assert: (self executeSelector: #returnSuper withReceiver: receiver ) == receiver 
+]
+
+{ #category : #tests }
+CHInterpreterTest >> testStore100IntoX [
+	receiver x: 17.
+	self executeSelector: #store100IntoX .
+	self assert: receiver x equals: 100
 ]
