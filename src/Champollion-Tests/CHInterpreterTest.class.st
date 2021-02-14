@@ -60,7 +60,7 @@ CHInterpreterTest >> testReturnFloat [
 CHInterpreterTest >> testReturnGlobal [
 	| globalObject |
 	globalObject := Object new.
-	interpreter globalEnvironmentAt: #Global put: globalObject.
+	self interpreter globalEnvironmentAt: #Global put: globalObject.
 	self assert: (self executeSelector: #returnGlobal) equals: globalObject  
 ]
 
