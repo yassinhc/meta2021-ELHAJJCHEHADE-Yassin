@@ -35,6 +35,11 @@ CHInterpretable >> returnSelf [
 ]
 
 { #category : #'as yet unclassified' }
+CHInterpretable >> returnSuper [
+	^ super
+]
+
+{ #category : #'as yet unclassified' }
 CHInterpretable >> visitSelfNode: aNode [
 	^ self receiver
 ]

@@ -45,8 +45,18 @@ CHInterpreter >> visitReturnNode: aReturnNode [
 ]
 
 { #category : #visiting }
+CHInterpreter >> visitSelfNode: aRBSelfNode [ 
+	^ self receiver
+]
+
+{ #category : #visiting }
 CHInterpreter >> visitSequenceNode: aSequenceNode [ 
 	aSequenceNode statements allButLast 
 	do: [ :each | self visitNode: each ].
 	^ self visitNode: aSequenceNode statements last
+]
+
+{ #category : #visiting }
+CHInterpreter >> visitSuperNode: aRBSuperNode [ 
+	^ self receiver 
 ]

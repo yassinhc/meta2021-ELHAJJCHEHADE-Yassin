@@ -6,7 +6,7 @@ Class {
 
 { #category : #tests }
 CHInterpreterTest >> executeSelector: aSymbol [ 
-	^ self execute: aSymbol withReceiver: nil.
+	^ self executeSelector: aSymbol withReceiver: nil.
 	
 ]
 
@@ -58,4 +58,11 @@ CHInterpreterTest >> testReturnSelf [
 	| receiver |
 	receiver := Object new.
 	self assert: (self executeSelector: #returnSelf withReceiver: receiver ) == receiver 
+]
+
+{ #category : #tests }
+CHInterpreterTest >> testReturnSuper [
+	| receiver |
+	receiver := Object new.
+	self assert: (self executeSelector: #returnSuper withReceiver: receiver ) == receiver 
 ]
